@@ -106,13 +106,6 @@ pub mod smart_lottery {
         pub fn get_pool(&self) -> Balance {
             self.prize_pool
         }
-
-        #[ink(message)]
-        pub fn do_lottery(&self) {
-            self.env().emit_event(Lottery {
-                prize: self.prize_pool,
-            });
-        }
     }
 
     #[cfg(test)]
